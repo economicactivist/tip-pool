@@ -16,9 +16,10 @@ function submitServerInfo(evt) {
 
   if (serverName !== '') {
     serverId++;
-    allServers['server' + serverId] = { serverName };
+    allServers['server' + serverId] = {serverName}; //{serverName : serverName}
 
     updateServerTable();
+    console.log(allServers)
 
     serverNameInput.value = '';
   }
@@ -40,5 +41,9 @@ function updateServerTable() {
     appendTd(newTr, '$' + tipAverage.toFixed(2));
 
     serverTbody.append(newTr);
+    // serverTbody.remove()
+    // console.dir(serverTbody)
+    // serverTbody.children[0].firstChild.innerText
+    // console.log(serverTbody.innerHTML)
   }
 }

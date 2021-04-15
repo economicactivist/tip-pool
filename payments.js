@@ -20,6 +20,7 @@ function submitPaymentInfo(evt) {
     paymentId += 1;
 
     allPayments['payment' + paymentId] = curPayment;
+    console.log(allPayments)
 
     appendPaymentTable(curPayment);
     updateServerTable();
@@ -56,7 +57,14 @@ function appendPaymentTable(curPayment) {
   appendTd(newTr, '$' + curPayment.tipAmt);
   appendTd(newTr, curPayment.tipPercent + '%');
 
+  console.log('type of data', typeof(curPayment.billAmt))
+  console.log(Number('x'))
+
   paymentTbody.append(newTr);
+  // console.log(newTr)
+  console.log("bob")
+  console.log(newTr.innerText.split("\t"))
+  console.log(paymentTbody.children[0].innerText.split("\t")[0])
 }
 
 // Create table row element and pass to appendTd with calculated sum of all payment
