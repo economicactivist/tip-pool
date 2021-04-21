@@ -56,6 +56,7 @@ function appendPaymentTable(curPayment) {
   appendTd(newTr, '$' + curPayment.billAmt);
   appendTd(newTr, '$' + curPayment.tipAmt);
   appendTd(newTr, curPayment.tipPercent + '%');
+  appendDeleteBtn(newTr)
 
   console.log('type of data', typeof(curPayment.billAmt))
   console.log(Number('x'))

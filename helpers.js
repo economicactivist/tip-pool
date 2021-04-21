@@ -24,3 +24,14 @@ function appendTd(tr, value) {
 
   tr.append(newTd);
 }
+
+function appendDeleteBtn(tr) {
+  let deleteBtn = document.createElement('button')
+  deleteBtn.classList.add('.deleteBtn')
+  deleteBtn.innerText="X"
+  
+  deleteBtn.addEventListener('click', e=>{
+    e.target.parentElement.remove()
+  })
+  tr.append(deleteBtn)
+}

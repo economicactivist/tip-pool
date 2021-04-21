@@ -27,6 +27,15 @@ describe('Payments tests', () => {
     expect(paymentTbody.children[0].innerText.split("\t")[2] ==='20%').toBe(true)
   })
 
+  it('should test if delete button was created', ()=>{
+    let newTr = document.createElement('tr');
+
+    appendDeleteBtn(newTr);
+
+    expect(newTr.children.length).toEqual(1);
+    expect(newTr.firstChild.innerHTML).toEqual('X');
+  })
+
   afterEach(() => {
     billAmtInput.value = '';
     tipAmtInput.value = '';
